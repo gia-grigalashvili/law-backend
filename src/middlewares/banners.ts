@@ -1,7 +1,8 @@
 import { Request, Response, NextFunction } from "express"
 import { ZodError, ZodSchema } from "zod"
 
-export const  validate =
+
+export const validateBunner =
   (schema: ZodSchema) => (req: Request, res: Response, next: NextFunction) => {
     try {
       schema.parse(req.body)

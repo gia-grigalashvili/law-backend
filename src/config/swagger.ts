@@ -16,12 +16,12 @@ const options: swaggerJSDoc.Options = {
       },
     ],
   },
-  apis: ['./src/routes/*.ts'],
+  apis: ['./src/router/*.ts'],
 }
 
-const swaggerSpec = swaggerJSDoc(options)
+const swaggerDocs = swaggerJSDoc(options)
 
 export const setupSwagger = (app: Express) => {
-  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec))
+  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs))
   console.log('Swagger UI is running on http://localhost:4000/api-docs')
 }

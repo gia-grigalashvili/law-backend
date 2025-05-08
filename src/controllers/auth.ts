@@ -48,3 +48,8 @@ export const login = async (req: Request, res: Response): Promise<void> => {
   })
   res.status(200).json({ message: "admin logged in successfully" })
 }
+
+export const logout = (req: Request, res: Response): void => {
+  res.clearCookie("toekn")
+  res.status(200).json({ message: "admin logged out successfully" })
+}

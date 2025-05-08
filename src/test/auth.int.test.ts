@@ -14,7 +14,7 @@ afterAll(async () => {
   await mongoose.connection.dropDatabase() // საჭიროა მხოლოდ test გარემოში
   await mongoose.connection.close()
 })
-// Describe ბლოკი ტესტების დაჯგუფებისთვის
+
 describe("Auth Routes", () => {
   it("should register a new admin", async () => {
     const res = await request(app).post("/api/auth/register").send({
@@ -23,7 +23,7 @@ describe("Auth Routes", () => {
     })
 
     expect(res.statusCode).toBe(201)
-    expect(res.body.message).toBe("admin registered succes") // თუ ასე წერია შენს კოდში
+    expect(res.body.message).toBe("admin registered succes")
   })
 
   it("should not allow duplicate registration", async () => {
@@ -56,4 +56,6 @@ describe("Auth Routes", () => {
     expect(res.statusCode).toBe(401)
     expect(res.body.message).toBe("invalid credentials")
   })
+
+  
 })
