@@ -6,6 +6,11 @@ import carouselRoutes from "./router/carousel"
 import bunnerRoutes from "./router/banners"
 import partnersRoutes from "./router/Partners"
 import quoteRoutes from "./router/quoteCarousel"
+import contactRoutes from "./router/contact"
+import faqRoutes from "./router/faq"
+import blogRoutes from "./router/blog"
+import categoryRoutes from "./router/category"
+import tagRoutes from "./router/Tags"
 const app = express()
 
 app.use(cors())
@@ -18,4 +23,9 @@ app.use("/api/carousel", carouselRoutes)
 app.use("/api/bunner", bunnerRoutes)
 app.use("/api/partners", partnersRoutes)
 app.use("/api/quotes", quoteRoutes)
+app.use("/api/contact", contactRoutes)
+app.use("/api/faq", faqRoutes)
+app.use("/api/blogs", blogRoutes)
+app.use("/api/categories", categoryRoutes)
+app.use("/api/tags", tagRoutes)
 export default app

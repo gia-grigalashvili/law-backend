@@ -42,7 +42,7 @@ const router = Router()
 
 /**
  * @swagger
- * /carousel:
+ * /api/carousel:
  *   get:
  *     summary: Get all carousel items
  *     tags: [Carousel]
