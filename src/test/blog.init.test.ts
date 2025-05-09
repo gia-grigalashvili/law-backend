@@ -25,10 +25,10 @@ describe("Blog API", () => {
       .post("/api/blogs")
       .set("Cookie", `token=${token}`)
       .send({
-        title: "Test Blog",
+        title: "Gia Blog",
         subTitle: "Test Subtitle",
         slug: "test-blog",
-        content: "This is a test blog",
+        content: "This is a Gia blog",
         images: ["https://example.com/image.jpg"],
         category: "Test Category",
         tags: ["test", "blog"],
@@ -44,7 +44,7 @@ describe("Blog API", () => {
 
     expect(response.status).toBe(201)
     expect(response.body.message).toBe("Blog created successfully")
-    expect(response.body.data.title).toBe("Test Blog")
+    expect(response.body.data.title).toBe("Gia Blog")
     expect(response.body.data.slug).toBeDefined()
     blogId = response.body.data._id
     slug = response.body.data.slug
@@ -64,7 +64,7 @@ describe("Blog API", () => {
     console.log("Get blog by slug response:", response.body, "Slug used:", slug)
     expect(response.status).toBe(200)
     expect(response.body.message).toBe("Blog fetched successfully")
-    expect(response.body.data.title).toBe("Test Blog")
+    expect(response.body.data.title).toBe("Gia Blog")
     expect(response.body.data.slug).toBe(slug)
   })
 

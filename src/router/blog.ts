@@ -13,11 +13,11 @@ import { updateBlogSchema, createBlogSchema } from "../validator/blog"
 
 const router = Router()
 
-// public routes
+
 router.get("/", getAllBlogs)
 router.get("/latest", getLatestBlogs)
 router.get("/:slug", getBlogBySlug)
-// admin routes
+
 router.post("/", requireAdmin, validate(createBlogSchema), createBlog)
 router.put("/:id", requireAdmin, validate(updateBlogSchema), updateBlog)
 router.delete("/:id", requireAdmin, deleteBlog)
@@ -30,7 +30,7 @@ export default router
  *   name: Blogs
  *   description: Blog management endpoints
  *
- * /blogs:
+ * /api/blogs:
  *   get:
  *     summary: Get all blogs
  *     tags: [Blogs]

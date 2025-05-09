@@ -38,7 +38,7 @@
 
 /**
  * @swagger
- * /partners:
+ * /api/partners:
  *   get:
  *     summary: Get all partners
  *     tags: [Partners]
